@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "./components/Header";
 import Tasks from "./components/Tasks";
+
 function App() {
   const [tasks, setTasks] = useState([
     {
@@ -10,9 +11,15 @@ function App() {
       reminder: false,
     },
     {
-      id: 1,
-      text: "coder en react",
-      day: "du 24 au 26 Aout",
+      id: 2,
+      text: "boire une bière",
+      day: "all dayz",
+      reminder: false,
+    },
+    {
+      id: 3,
+      text: "lire de la doc",
+      day: "tt les soirs avant DoDo",
       reminder: false,
     },
   ]);
