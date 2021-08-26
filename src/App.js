@@ -1,35 +1,55 @@
 import { useState } from "react";
 import Header from "./components/Header";
 import Tasks from "./components/Tasks";
+import AddTask from "./components/AddTask";
 
 function App() {
   const [tasks, setTasks] = useState([
     {
       id: 1,
       text: "coder en react",
-      day: "du 24 au 26 Aout",
-      reminder: false,
+      day: "du 24 au 29 Aout",
+      reminder: true,
     },
     {
       id: 2,
       text: "boire une bière",
-      day: "all dayz",
-      reminder: false,
+      day: "everydayz",
+      reminder: true,
     },
     {
       id: 3,
       text: "lire de la doc",
       day: "tt les soirs avant DoDo",
-      reminder: false,
+      reminder: true,
     },
   ]);
+  // DELETE TASK
+  const deleteTask = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
+
+  // TOGGLE REMINDER\\
+  const toggleReminder = (id) => {
+    setTasks(
+      tasks.map((task) =>
+        task.id === id ? { ...task, reminder: !task.reminder } : task
+      )
+    );
+  };
+
   //   test for fun
   // const name = "benben";
   // const x = true;
   return (
     <div className="container">
       <Header />
-      <Tasks tasks={tasks} />
+      <AddTask />
+      {tasks.length > 0 ? (
+        <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
+      ) : (
+        "no tasks to show"
+      )}
       {/*
       test for fun
       <h1>hello everybody</h1>
