@@ -1,0 +1,22 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "text": "coder en react",
+      "day": "du 24 au 29 Aout",
+      "reminder": true
+    },
+    {
+      "id": 2,
+      "text": "boire une bière",
+      "day": "everydayz",
+      "reminder": true
+    },
+    {
+      "id": 3,
+      "text": "lire de la doc",
+      "day": "tt les soirs avant DoDo",
+      "reminder": true
+    }
+  ]
+}
